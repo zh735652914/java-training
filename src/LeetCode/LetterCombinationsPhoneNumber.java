@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-class LetterCombinationsPhoneNumberSolution{
-    List<String> ans=new ArrayList<>();
+class LetterCombinationsPhoneNumberSolution {
+    List<String> ans = new ArrayList<>();
     HashMap<String, String> phone = new HashMap<String, String>() {{
         put("2", "abc");
         put("3", "def");
@@ -30,32 +30,34 @@ class LetterCombinationsPhoneNumberSolution{
         put("8", "tuv");
         put("9", "wxyz");
     }};
-    public List<String> letterCombinations(String digits){
+
+    public List<String> letterCombinations(String digits) {
 //        List<String> ans=new ArrayList<>();
 //        String letters = phone.get(digits.substring(0,1));
-        if(digits.length()==0) return ans;
-        backtrack("",digits);
+        if (digits.length() == 0) return ans;
+        backtrack("", digits);
         return ans;
     }
-    public void backtrack(String combinations,String digits){
-        if(digits.length()==0) {
+
+    public void backtrack(String combinations, String digits) {
+        if (digits.length() == 0) {
             ans.add(combinations);
             return;
         }
-        String letters = phone.get(digits.substring(0,1));
+        String letters = phone.get(digits.substring(0, 1));
         for (int i = 0; i < letters.length(); i++) {
 //            combinations=combinations+letters.charAt(i);
-            backtrack(combinations+letters.charAt(i),digits.substring(1));
+            backtrack(combinations + letters.charAt(i), digits.substring(1));
         }
     }
 }
 
 public class LetterCombinationsPhoneNumber {
     public static void main(String[] args) {
-        String digits="23";
-        LetterCombinationsPhoneNumberSolution LCN=new LetterCombinationsPhoneNumberSolution();
-        List<String> ans=new ArrayList<>();
-        ans=LCN.letterCombinations(digits);
-        System.out.println("ans="+ans);
+        String digits = "23";
+        LetterCombinationsPhoneNumberSolution LCN = new LetterCombinationsPhoneNumberSolution();
+        List<String> ans = new ArrayList<>();
+        ans = LCN.letterCombinations(digits);
+        System.out.println("ans=" + ans);
     }
 }
