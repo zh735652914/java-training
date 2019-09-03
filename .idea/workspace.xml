@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aadd2fbd-18cf-460b-8743-a183a86cfbfd" name="Default" comment="First">
+    <list default="true" id="aadd2fbd-18cf-460b-8743-a183a86cfbfd" name="Default" comment="By ZhouHao">
+      <change afterPath="$PROJECT_DIR$/src/LeetCode/LIstNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LeetCode/ReverseNodes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java_test/testThread/myThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java_test/testThread/myThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java_test/testThread/testThread1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java_test/testThread/testThread1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testThread/testThread1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testThread/testThread1.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,10 +22,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/testThread/testThread1.java">
+        <entry file="file://$PROJECT_DIR$/src/LeetCode/ReverseNodes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+            <state relative-caret-position="342">
+              <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LeetCode/LetterCombinationsPhoneNumber.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,29 +70,34 @@
         <option value="$PROJECT_DIR$/src/ReadBigTxt.java" />
         <option value="$PROJECT_DIR$/src/TreeNode.java" />
         <option value="$PROJECT_DIR$/src/test.java" />
-        <option value="$PROJECT_DIR$/src/testThread/testThread1.java" />
         <option value="$PROJECT_DIR$/src/LeetCode/ReadBigTxt.java" />
         <option value="$PROJECT_DIR$/src/LeetCode/test.java" />
         <option value="$PROJECT_DIR$/src/LeetCode/threeSumClosest.java" />
         <option value="$PROJECT_DIR$/src/LeetCode/ThreeSum.java" />
         <option value="$PROJECT_DIR$/src/LeetCode/LetterCombinationsPhoneNumber.java" />
+        <option value="$PROJECT_DIR$/src/testThread/testThread1.java" />
+        <option value="$PROJECT_DIR$/src/testThread/ThreadMethodTest.java" />
+        <option value="$PROJECT_DIR$/src/LeetCode/FourSum.java" />
+        <option value="$PROJECT_DIR$/src/LeetCode/LIstNode.java" />
+        <option value="$PROJECT_DIR$/src/LeetCode/ReverseNodes.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="501" />
-    <option name="y" value="285" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="820" />
+    <option name="y" value="135" />
+    <option name="width" value="1415" />
+    <option name="height" value="835" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -92,19 +114,27 @@
               <item name="java_test" type="b2602c69:ProjectViewProjectNode" />
               <item name="java_test" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="testThread" type="462c0819:PsiDirectoryNode" />
+              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java_test" type="b2602c69:ProjectViewProjectNode" />
               <item name="java_test" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="testThread" type="462c0819:PsiDirectoryNode" />
-              <item name="testThread1.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+              <item name="LetterCombinationsPhoneNumber.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="java_test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+              <item name="ReverseNodes.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -136,9 +166,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LetterCombinationsPhoneNumber">
+  <component name="RunManager" selected="Application.ReverseNodes">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FourSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.FourSum" />
+      <module name="java_test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="LeetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,21 +201,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReadBigTxt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.ReadBigTxt" />
-      <module name="java_test" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ThreeSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.ThreeSum" />
+    <configuration name="ReverseNodes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.ReverseNodes" />
       <module name="java_test" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="LeetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThreadMethodTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testThread.ThreadMethodTest" />
+      <module name="java_test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testThread.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -200,20 +250,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="testThread.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="threeSumClosest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.threeSumClosest" />
-      <module name="java_test" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="LeetCode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -328,19 +364,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.test" />
-      <item itemvalue="Application.ReadBigTxt" />
       <item itemvalue="Application.testThread1" />
-      <item itemvalue="Application.threeSumClosest" />
-      <item itemvalue="Application.ThreeSum" />
       <item itemvalue="Application.LetterCombinationsPhoneNumber" />
+      <item itemvalue="Application.ThreadMethodTest" />
+      <item itemvalue="Application.FourSum" />
+      <item itemvalue="Application.ReverseNodes" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LetterCombinationsPhoneNumber" />
-        <item itemvalue="Application.ThreeSum" />
-        <item itemvalue="Application.threeSumClosest" />
+        <item itemvalue="Application.ReverseNodes" />
+        <item itemvalue="Application.FourSum" />
+        <item itemvalue="Application.ThreadMethodTest" />
         <item itemvalue="Application.testThread1" />
-        <item itemvalue="Application.ReadBigTxt" />
+        <item itemvalue="Application.LetterCombinationsPhoneNumber" />
       </list>
     </recent_temporary>
   </component>
@@ -392,7 +428,9 @@
       <workItem from="1567045345947" duration="68000" />
       <workItem from="1567045452661" duration="416000" />
       <workItem from="1567316567597" duration="7207000" />
-      <workItem from="1567325101017" duration="931000" />
+      <workItem from="1567325101017" duration="15003000" />
+      <workItem from="1567387907840" duration="81000" />
+      <workItem from="1567412234819" duration="5234000" />
     </task>
     <task id="LOCAL-00001" summary="First">
       <created>1567045528830</created>
@@ -422,11 +460,46 @@
       <option name="project" value="LOCAL" />
       <updated>1567323359635</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="By ZhouHao">
+      <created>1567326090023</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1567326090023</updated>
+    </task>
+    <task id="LOCAL-00006" summary="By ZhouHao">
+      <created>1567326385568</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1567326385568</updated>
+    </task>
+    <task id="LOCAL-00007" summary="By ZhouHao">
+      <created>1567335833952</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1567335833953</updated>
+    </task>
+    <task id="LOCAL-00008" summary="By ZhouHao">
+      <created>1567341889427</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1567341889428</updated>
+    </task>
+    <task id="LOCAL-00009" summary="By ZhouHao">
+      <created>1567412585523</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1567412585523</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87840000" />
+    <option name="totallyTimeSpent" value="107227000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -439,9 +512,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21045576" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18096514" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Nl-Palette" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -451,15 +523,15 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.19971672" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.398017" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.21246459" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32719547" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49932975" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5013405" side_tool="true" weight="0.19971672" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3281471" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32577905" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -551,9 +623,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="By ZhouHao" />
     <MESSAGE value="First" />
-    <option name="LAST_COMMIT_MESSAGE" value="First" />
+    <MESSAGE value="By ZhouHao" />
+    <option name="LAST_COMMIT_MESSAGE" value="By ZhouHao" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -583,6 +655,20 @@
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>i=2</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>pos=1</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/HelloWorld1.class" />
     <entry file="file://$PROJECT_DIR$/HelloWorld.java" />
@@ -604,13 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="304" selection-start-line="304" selection-end-line="304" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LeetCode/TreeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -667,16 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LeetCode/LetterCombinationsPhoneNumber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="35948">
@@ -688,27 +757,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LeetCode/ThreeSum.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+        <state relative-caret-position="230">
+          <caret line="149" column="35" lean-forward="true" selection-start-line="149" selection-start-column="35" selection-end-line="149" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testThread/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/testThread/testThread1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="e#497#817#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testThread/ThreadMethodTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#587#588#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LeetCode/FourSum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="65" column="46" lean-forward="true" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/Thread.java">
+    <entry file="file://$PROJECT_DIR$/src/LeetCode/ThreeSum.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="140" column="34" lean-forward="true" selection-start-line="140" selection-start-column="34" selection-end-line="140" selection-end-column="34" />
+        <state relative-caret-position="532">
+          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/testThread/testThread1.java">
+    <entry file="file://$PROJECT_DIR$/src/LeetCode/TreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        <state relative-caret-position="209">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LeetCode/LetterCombinationsPhoneNumber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LeetCode/LIstNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <element signature="e#89#90#0" expanded="true" />
+            <element signature="e#112#113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LeetCode/ReverseNodes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
         </state>
       </provider>
     </entry>
