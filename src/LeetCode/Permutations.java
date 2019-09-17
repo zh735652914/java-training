@@ -29,13 +29,16 @@ class PermutationsSolution {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
 //        Arrays.sort(nums);
-        backtrack(nums, ans, new ArrayList<>());
+        List<Integer> aAns = new ArrayList<>();
+//        backtrack(nums, ans, new ArrayList<>());
+        backtrack(nums, ans, aAns);
         return ans;
     }
 
     private void backtrack(int[] nums, List<List<Integer>> ans, List<Integer> aAns) {
         if (aAns.size() == nums.length) {
             ans.add(new ArrayList<>(aAns));
+//            ans.add(aAns);
         } else {
             for (int i = 0; i < nums.length; i++) {
                 if (aAns.contains(nums[i])) continue;
