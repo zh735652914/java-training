@@ -8,12 +8,12 @@ class TestThread extends Thread {
 //                yield();
 //            }
             if (i % 2 != 0) {
-                try {
-                    sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println(Thread.currentThread().getName() + "\tThis is Test\t" + i);
+//                try {
+//                    sleep(500);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+                System.out.println(Thread.currentThread().getName() + "\tPriority:" + getPriority() + "\t|" + i);
             }
 
         }
@@ -33,7 +33,7 @@ public class ThreadMethodTest {
         Thread.currentThread().setName("主线程");
         for (int i = 0; i < 100; i++) {
             if (i % 2 == 0) {
-                System.out.println(Thread.currentThread().getName() + "\tThis is main\t" + i);
+                System.out.println(Thread.currentThread().getName() + "\tThis is main\t" + "\tPriority:" + Thread.currentThread().getPriority() + "\t|" + i);
             }
 //            if (i == 30) {
 //                try {

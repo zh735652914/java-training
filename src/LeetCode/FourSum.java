@@ -74,11 +74,11 @@ class SolutionFourSum {
                     aAns.add(nums[pos]);
                     aAns.add(nums[i]);
                     aAns.add(nums[l]);
+//                    ans.add(aAns);
                     aAns.add(nums[r]);
                     if (!ans.contains(aAns)) {
                         ans.add(aAns);
                     }
-//                    ans.add(aAns);
                     l++;
                 }
             }
