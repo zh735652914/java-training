@@ -18,51 +18,43 @@ Output:
 ]
  */
 
+//自己写的很慢，这个是看了Discuss后的解答
+
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 class SubsetsIISolution {
-    List<List<Integer>> ans = new ArrayList<>();
-
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         Arrays.sort(nums);
+        List<List<Integer>> ans = new ArrayList<>();
         List<Integer> Subset = new ArrayList<>();
-        bracktrack(nums, Subset, 0);
-        for (int i = 0; i < ans.size(); i++) {
-            List<Integer> aAns = ans.get(i);
-            for (int j = 0; j < ans.size(); j++) {
-                if (j == i) continue;
-                if (ans.get(j).equals(aAns)) {
-                    ans.remove(j);
-                    j = 0;
-                }
-            }
-        }
+        bracktrack(ans, Subset, 0, nums);
         return ans;
     }
 
-    private void bracktrack(int[] nums, List<Integer> Subset, int index) {
-//        System.out.println("ans=" + ans + "  Subset=" + Subset + "   index=" + ans.indexOf(Subset));
-//        if (ans.indexOf(Subset) == -1) {
-//            ans.add(Subset);
-//            System.out.println("@@@@ ans=" + ans);
-//        }
-        ans.add(Subset);
-        if (index == nums.length) return;
-        for (int i = index; i < nums.length; i++) {
-            Subset.add(nums[i]);
-            bracktrack(nums, new ArrayList<>(Subset), i + 1);
-//            System.out.println("Subset=" + Subset);
-            Subset.remove(Subset.size() - 1);
+    private void bracktrack(List<List<Integer>> ans, List<Integer> Subset, int pos, int[] nums) {
+        if (pos <= nums.length) {
+            ans.add(Subset);
         }
+        for (int i = pos; i < nums.length; ) {
+            Subset.add(nums[i]);
+            bracktrack(ans, new ArrayList<>(Subset), i + 1, nums);
+            Subset.remove(Subset.size() - 1);
+            i++;
+            while (i < nums.length && nums[i] == nums[i - 1]) {
+                i++;
+            }
+        }
+        return;
     }
 }
 
 public class SubsetsII {
     public static void main(String[] args) {
-        int[] nums = {};
-//        int[] nums = {5, 5, 5, 5, 5};
+//        int[] nums = {};
+        int[] nums = {5, 5, 5, 5, 5};
         SubsetsIISolution SII = new SubsetsIISolution();
         List<List<Integer>> ans = SII.subsetsWithDup(nums);
         for (int i = 0; i < ans.size(); i++) {
