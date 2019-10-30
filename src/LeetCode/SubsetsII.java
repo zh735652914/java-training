@@ -20,7 +20,6 @@ Output:
 
 //自己写的很慢，这个是看了Discuss后的解答
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
