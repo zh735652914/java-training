@@ -21,7 +21,7 @@ Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
  */
 
 //自己写的，我太难了！！！！！！！！！！！！！！！
-class DecodeWaysSolution {
+class MyDecodeWaysSolution {
     public int numDecodings(String s) {
         if (s.charAt(0) == '0') return 0;
         return bracktrack(s, s.length() - 1, false, false);
@@ -69,11 +69,34 @@ class DecodeWaysSolution {
     }
 }
 
+//Discuss中别人写的dp
+class DecodeWaysSolution {
+    public int numDecodings(String s) {
+        if (s == null || s.length() == 0) return 0;
+        int n = s.length();
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        dp[1] = s.charAt(0) == '0' ? 0 : 1;
+        for (int i = 2; i <= n; i++) {
+            int first = Integer.valueOf(s.substring(i - 1, i));
+            int second = Integer.valueOf(s.substring(i - 2, i));
+            if (first > 0 && first <= 9) {
+                dp[i] += dp[i - 1];
+            }
+            if (second >= 10 && second <= 26) {
+                dp[i] += dp[i - 2];
+            }
+        }
+        return dp[n];
+    }
+}
+
 public class DecodeWays {
     public static void main(String[] args) {
-//        String s = "509";
+        String s = "509";
 //        String s = "101010";
-        String s = "7206";
+//        String s = "7206";
+//        System.out.println("07= " + Integer.valueOf(s.substring(0, 2)));
         DecodeWaysSolution DW = new DecodeWaysSolution();
         System.out.println(DW.numDecodings(s));
     }
