@@ -34,4 +34,40 @@ public class BuildTree {
         }
         return pos;
     }
+
+
+    public TreeNode LevelBuild(String[] s) {
+        TreeNode[] nodes = new TreeNode[s.length];
+        for (int i = 0; i < s.length; i++) {
+            if (s[i].equals("null")) continue;
+            nodes[i] = new TreeNode(Integer.parseInt(s[i]));
+        }
+        int[] insert = new int[s.length];
+        LevelBacktrack(nodes, 1);
+        return nodes[0];
+    }
+
+    private void LevelBacktrack(TreeNode[] nodes, int level) {
+
+        int lastlevel = level - 1;
+        int rootStart = (int) (Math.pow(2, lastlevel) - 1), nodeStart = (int) (Math.pow(2, level) - 1);
+
+        int index = nodeStart;
+        int flag = 1;
+        for (int i = rootStart; i < nodeStart && i < nodes.length; i++) {
+            if (index >= nodes.length) {
+                flag = 0;
+                break;
+            }
+            nodes[i].left = nodes[index];
+            index++;
+            if (index >= nodes.length) {
+                flag = 0;
+                break;
+            }
+            nodes[i].right = nodes[index];
+            index++;
+        }
+        if (flag == 1) LevelBacktrack(nodes, level + 1);
+    }
 }
