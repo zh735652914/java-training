@@ -1,5 +1,10 @@
 package LeetCode;
 
+import sun.reflect.generics.tree.Tree;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
 //java前序中序建立一颗二叉树
 public class BuildTree {
     public TreeNode Build(int[] preorder, int[] inorder) {
@@ -42,9 +47,33 @@ public class BuildTree {
             if (s[i].equals("null")) continue;
             nodes[i] = new TreeNode(Integer.parseInt(s[i]));
         }
-        int[] insert = new int[s.length];
-        LevelBacktrack(nodes, 1);
+//        LevelBacktrack(nodes, 1);
+        Queue<Integer> Q = new LinkedList<>();
+        Q.add(0);
+        LevelBacktrack2(nodes, Q, 1);
         return nodes[0];
+    }
+
+    private void LevelBacktrack2(TreeNode[] nodes, Queue<Integer> Q, int index) {
+        int n = Q.size();
+        if (n == 0 || index >= nodes.length) return;
+        while (n > 0) {
+            if (index >= nodes.length) break;
+            TreeNode root = nodes[Q.remove()];
+            if (nodes[index] != null) {
+                root.left = nodes[index];
+                Q.add(index);
+            }
+            index++;
+            if (index >= nodes.length) break;
+            if (nodes[index] != null) {
+                root.right = nodes[index];
+                Q.add(index);
+            }
+            index++;
+            n--;
+        }
+        LevelBacktrack2(nodes, Q, index);
     }
 
     private void LevelBacktrack(TreeNode[] nodes, int level) {
