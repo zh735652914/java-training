@@ -5,9 +5,34 @@ import sun.reflect.generics.tree.Tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-//java前序中序建立一颗二叉树
+//建立二叉树
 public class BuildTree {
-    public TreeNode Build(int[] preorder, int[] inorder) {
+    //java前序中序建立一颗二叉树,自己写的
+    public TreeNode BuildTree(int[] preorder, int[] inorder) {
+        return backtrack(preorder, inorder, 0, 0, inorder.length - 1);
+    }
+
+    private TreeNode backtrack(int[] preorder, int[] inorder, int index, int start, int end) {
+        if (index >= preorder.length || start > end) return null;
+        TreeNode root = new TreeNode(preorder[index]);
+        int pos = -1;
+        for (int i = start; i <= end; i++) {
+            if (inorder[i] == preorder[index]) {
+                pos = i;
+                break;
+            }
+        }
+        index++;
+        root.left = backtrack(preorder, inorder, index, start, pos - 1);
+        if (root.left != null) {
+            index += (pos - start);
+        }
+        root.right = backtrack(preorder, inorder, index, pos + 1, end);
+        return root;
+    }
+
+    //java前序中序建立一颗二叉树,不是自己写的
+    public TreeNode BuildOthers(int[] preorder, int[] inorder) {
         if (preorder == null || preorder.length == 0) {
             return null;
         }
@@ -39,7 +64,7 @@ public class BuildTree {
         }
         return pos;
     }
-
+    //Done
 
     public TreeNode LevelBuild(String[] s) {
         TreeNode[] nodes = new TreeNode[s.length];
