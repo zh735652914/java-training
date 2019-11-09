@@ -41,7 +41,7 @@ public class BinaryTreeInorderTraversal {
         int[] preorder = {1, 2, 3};
         int[] inorder = {1, 3, 2};
         BuildTree BT = new BuildTree();
-        TreeNode root = BT.Build(preorder, inorder);
+        TreeNode root = BT.BuildTree(preorder, inorder);
         BinaryTreeInorderTraversalSolution BTIT = new BinaryTreeInorderTraversalSolution();
         System.out.println(BTIT.inorderTraversal(root));
     }
