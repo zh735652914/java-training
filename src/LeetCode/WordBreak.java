@@ -30,7 +30,7 @@ Output: false
 
 //class WordBreakSolution0 {
 //    public boolean wordBreak(String s, List<String> wordDict) {
-//        if (s.length() == 0) return true;
+//        if (s == null || s.length() == 0) return false;
 //        boolean flag = false;
 //        for (int i = 0; i < wordDict.size(); i++) {
 //            String sub = "";
