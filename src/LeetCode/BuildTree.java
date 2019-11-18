@@ -79,6 +79,19 @@ public class BuildTree {
         return nodes[0];
     }
 
+    public TreeNode LevelBuildInteger(int[] nums) {
+        TreeNode[] nodes = new TreeNode[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+//            if (s[i].equals("null")) continue;
+            nodes[i] = new TreeNode(nums[i]);
+        }
+//        LevelBacktrack(nodes, 1);
+        Queue<Integer> Q = new LinkedList<>();
+        Q.add(0);
+        LevelBacktrack2(nodes, Q, 1);
+        return nodes[0];
+    }
+
     private void LevelBacktrack2(TreeNode[] nodes, Queue<Integer> Q, int index) {
         int n = Q.size();
         if (n == 0 || index >= nodes.length) return;
