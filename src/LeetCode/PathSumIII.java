@@ -32,36 +32,47 @@ import java.util.List;
 
 //自己写的时间空间效率不够
 class PathSumIIISolution {
-    private int ans = 0;
-    private List<TreeNode> Has = new ArrayList<>();
+    //    private int ans = 0;
+//    private List<TreeNode> Has = new ArrayList<>();
+//
+//    public int pathSum(TreeNode root, int sum) {
+//        backtrack(root, sum, sum);
+//        return ans;
+//    }
+//
+//
+//    private void backtrack(TreeNode root, int sum, int res) {
+//        if (root == null) return;
+//        if (res - root.val == 0) {
+//            ans++;
+////            System.out.println("ans= " + ans);
+////            System.out.println("res= " + res + "   root.val= " + root.val);
+//        }
+//        if (root.left != null) {
+//            backtrack(root.left, sum, res - root.val);
+//            if (!Has.contains(root.left)) {
+//                Has.add(root.left);
+//                backtrack(root.left, sum, sum);
+//            }
+//        }
+//        if (root.right != null) {
+//            backtrack(root.right, sum, res - root.val);
+//            if (!Has.contains(root.right)) {
+//                Has.add(root.right);
+//                backtrack(root.right, sum, sum);
+//            }
+//        }
+//    }
 
+    //别人写的真的很牛逼。。。
     public int pathSum(TreeNode root, int sum) {
-        backtrack(root, sum, sum);
-        return ans;
+        if (root == null) return 0;
+        return backtrack(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum);
     }
 
-
-    private void backtrack(TreeNode root, int sum, int res) {
-        if (root == null) return;
-        if (res - root.val == 0) {
-            ans++;
-//            System.out.println("ans= " + ans);
-//            System.out.println("res= " + res + "   root.val= " + root.val);
-        }
-        if (root.left != null) {
-            backtrack(root.left, sum, res - root.val);
-            if (!Has.contains(root.left)) {
-                Has.add(root.left);
-                backtrack(root.left, sum, sum);
-            }
-        }
-        if (root.right != null) {
-            backtrack(root.right, sum, res - root.val);
-            if (!Has.contains(root.right)) {
-                Has.add(root.right);
-                backtrack(root.right, sum, sum);
-            }
-        }
+    public int backtrack(TreeNode root, int sum) {
+        if (root == null) return 0;
+        return (root.val == sum ? 1 : 0) + backtrack(root.left, sum - root.val) + backtrack(root.right, sum - root.val);
     }
 }
 
