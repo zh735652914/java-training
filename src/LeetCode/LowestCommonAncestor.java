@@ -31,46 +31,58 @@ Note:
 All of the nodes' values will be unique.
 p and q are different and both values will exist in the binary tree.
  */
+//自己写的时间空间效率都很低，极低。。。。
+//class LowestCommonAncestorSolution {
+//    private List<TreeNode> PAncestor = new ArrayList<>();
+//    private List<TreeNode> QAncestor = new ArrayList<>();
+//
+//    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+//        backtrack(root, p, true);
+//        backtrack(root, q, false);
+//        TreeNode ans = null;
+//        int pIndex = PAncestor.size() - 1, qIndex = QAncestor.size() - 1;
+//        for (; pIndex >= 0 && qIndex >= 0; pIndex--, qIndex--) {
+//            if (PAncestor.get(pIndex) != QAncestor.get(qIndex)) {
+//                ans = PAncestor.get(pIndex + 1);
+//                break;
+//            }
+//        }
+//        if (ans == null) {
+//            ans = pIndex < 0 ? p : q;
+//        }
+//        return ans;
+//    }
+//
+//    private boolean backtrack(TreeNode root, TreeNode x, boolean Left) {
+//        if (root == null) return false;
+//        if (root == x) {
+//            if (Left) {
+//                PAncestor.add(root);
+//            } else {
+//                QAncestor.add(root);
+//            }
+//            return true;
+//        }
+//        boolean has = backtrack(root.left, x, Left) || backtrack(root.right, x, Left);
+//        if (has) {
+//            if (Left) {
+//                PAncestor.add(root);
+//            } else {
+//                QAncestor.add(root);
+//            }
+//        }
+//        return has;
+//    }
+//}
+
+//看了别人写的，感觉自己像智障。。。。
 class LowestCommonAncestorSolution {
-    private List<TreeNode> PAncestor = new ArrayList<>();
-    private List<TreeNode> QAncestor = new ArrayList<>();
-
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        backtrack(root, p, true);
-        backtrack(root, q, false);
-        TreeNode ans = null;
-        int pIndex = PAncestor.size() - 1, qIndex = QAncestor.size() - 1;
-        for (; pIndex >= 0 && qIndex >= 0; pIndex--, qIndex--) {
-            if (PAncestor.get(pIndex) != QAncestor.get(qIndex)) {
-                ans = PAncestor.get(pIndex + 1);
-                break;
-            }
-        }
-        if (ans == null) {
-            ans = pIndex < 0 ? p : q;
-        }
-        return ans;
-    }
-
-    private boolean backtrack(TreeNode root, TreeNode x, boolean Left) {
-        if (root == null) return false;
-        if (root == x) {
-            if (Left) {
-                PAncestor.add(root);
-            } else {
-                QAncestor.add(root);
-            }
-            return true;
-        }
-        boolean has = backtrack(root.left, x, Left) || backtrack(root.right, x, Left);
-        if (has) {
-            if (Left) {
-                PAncestor.add(root);
-            } else {
-                QAncestor.add(root);
-            }
-        }
-        return has;
+        if (root == null || root == p || root == q) return root;
+        TreeNode Left = lowestCommonAncestor(root.left, p, q);
+        TreeNode Right = lowestCommonAncestor(root.right, p, q);
+        if (Left != null && Right != null) return root;
+        return Left != null ? Left : Right;
     }
 }
 
