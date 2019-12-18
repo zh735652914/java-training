@@ -38,7 +38,7 @@ class DecodeStringSolution {
                 StringBuilder count = new StringBuilder();
 
                 while (!stack.empty() && stack.peek().length() == 1 && stack.peek().charAt(0) - '0' >= 0 && stack.peek().charAt(0) - '0' <= 9) {
-                    count = count.insert(0, stack.pop());
+                    count.insert(0, stack.pop());
 //                    count.append(stack.pop());
                 }
                 for (int n = 0; n < Integer.parseInt(count.toString()) - 1; n++) {
