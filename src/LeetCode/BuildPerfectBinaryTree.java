@@ -1,7 +1,5 @@
 package LeetCode;
 
-import sun.nio.cs.ArrayEncoder;
-
 /*
 public class PerfectBinaryTreeNode {
     public int val;

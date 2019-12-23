@@ -18,6 +18,8 @@ You may assume that all inputs are consist of lowercase letters a-z.
 All inputs are guaranteed to be non-empty strings.
  */
 
+//自己写的时间空间效率太低。。。
+
 import java.util.ArrayList;
 import java.util.List;
 

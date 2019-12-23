@@ -1,6 +1,5 @@
 package LeetCode;
 
-import sun.reflect.generics.tree.Tree;
 
 /*
 Given preorder and inorder traversal of a tree, construct the binary tree.
