@@ -58,7 +58,7 @@ class GasStationSolution {
     //自己写的，但是速度太慢。。。
     // Runtime: 149 ms, faster than 5.15% of Java online submissions for Gas Station.
     //Memory Usage: 36.5 MB, less than 100.00% of Java online submissions for Gas Station.
-    public int canCompleteCircuit(int[] gas, int[] cost) {
+    public int canCompleteCircuit0(int[] gas, int[] cost) {
         int len = 0, reserve = 0, start = 0;
         for (start = 0; start < gas.length; start++) {
             int pos = start;
@@ -77,6 +77,21 @@ class GasStationSolution {
         }
         if (start >= gas.length) return -1;
         return start;
+    }
+
+    //看了Discuss后写的。。。果然牛逼，自己的思路问题不大，就是要修改一下
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        int tank = 0, GasSum = 0, CostSum = 0, start = 0;
+        for (int i = 0; i < gas.length; i++) {
+            GasSum += gas[i];
+            CostSum += cost[i];
+            tank += gas[i] - cost[i];
+            if (tank < 0) {
+                start = i + 1;
+                tank = 0;
+            }
+        }
+        return GasSum >= CostSum ? start : -1;
     }
 }
 
