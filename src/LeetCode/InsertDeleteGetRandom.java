@@ -53,12 +53,12 @@ class RandomizedSet {
      * Initialize your data structure here.
      */
     Random random;
-    Map<Integer, Integer> map;
+    HashMap<Integer, Integer> map;
     List<Integer> list;
 
     public RandomizedSet() {
         random = new Random();
-        map = new HashMap();
+        map = new HashMap<>();
         list = new ArrayList<>();
     }
 
