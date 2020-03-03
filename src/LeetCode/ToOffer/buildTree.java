@@ -23,9 +23,39 @@ package LeetCode.ToOffer;
 0 <= 节点个数 <= 5000
  */
 
+import org.junit.Test;
+
 import java.util.Scanner;
 
 public class buildTree {
+    static class levelBuild {
+//        @Test
+//        public void test() {
+//            Scanner scanner = new Scanner(System.in);
+//            String[] Arr = scanner.nextLine().split(",");
+//            int[] nums = new int[Arr.length];
+//            for (int i = 0; i < nums.length; i++) {
+//                nums[i] = Integer.parseInt(Arr[i]);
+//            }
+//            buildTree(nums);
+//        }
+
+        public TreeNode buildTree(int[] nums) {
+            if (nums == null || nums.length == 0) return null;
+            return backtrack(0, nums, 0);
+        }
+
+        private TreeNode backtrack(int deep, int[] nums, int pos) {
+            if (pos >= nums.length) return null;
+            TreeNode root = new TreeNode(nums[pos]);
+            int left = (int) ((Math.pow(2, deep + 1) - 1) + 2 * (pos - (Math.pow(2, deep) - 1)));
+            root.left = backtrack(deep + 1, nums, left);
+            root.right = backtrack(deep + 1, nums, left + 1);
+            return root;
+        }
+    }
+
+    //前序中序建树
     static class Solution {
         public TreeNode buildTree(int[] preorder, int[] inorder) throws Exception {
             if (preorder == null || inorder == null || preorder.length == 0 || inorder.length == 0) return null;
