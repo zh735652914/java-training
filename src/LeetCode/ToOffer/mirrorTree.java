@@ -35,7 +35,6 @@ package LeetCode.ToOffer;
 通过次数4,384提交次数5,504
  */
 
-import LeetCode.BuildTree;
 
 import java.util.Scanner;
 
