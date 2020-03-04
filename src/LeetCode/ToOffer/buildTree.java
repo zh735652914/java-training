@@ -45,8 +45,22 @@ public class buildTree {
             return backtrack(0, nums, 0);
         }
 
+        public TreeNode buildTree(String[] nodes) {
+            if (nodes == null || nodes.length == 0) return null;
+            int[] nums = new int[nodes.length];
+            for (int i = 0; i < nums.length; i++) {
+                if (nodes[i].equals("null")) {
+                    nums[i] = Integer.MIN_VALUE;
+                } else {
+                    nums[i] = Integer.parseInt(nodes[i]);
+                }
+            }
+            return backtrack(0, nums, 0);
+        }
+
         private TreeNode backtrack(int deep, int[] nums, int pos) {
             if (pos >= nums.length) return null;
+            if (nums[pos] == Integer.MIN_VALUE) return null;
             TreeNode root = new TreeNode(nums[pos]);
             int left = (int) ((Math.pow(2, deep + 1) - 1) + 2 * (pos - (Math.pow(2, deep) - 1)));
             root.left = backtrack(deep + 1, nums, left);
