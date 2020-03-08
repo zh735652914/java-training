@@ -31,12 +31,7 @@ import java.util.Scanner;
 public class getLeastNumbers {
     static class Solution {
         public int[] getLeastNumbers(int[] arr, int k) {
-            Comparator<Integer> comparator = new Comparator<Integer>() {
-                @Override
-                public int compare(Integer o1, Integer o2) {
-                    return o2 - o1;
-                }
-            };
+            Comparator<Integer> comparator = (o1, o2) -> o2 - o1;
             Queue<Integer> queue = new PriorityQueue<>(comparator);
             for (int x : arr) {
                 if (queue.size() < k) {
