@@ -1,6 +1,5 @@
 package SwordRefersToOffer;
 
-import org.omg.PortableInterceptor.INACTIVE;
 
 import java.time.temporal.Temporal;
 import java.util.ArrayList;

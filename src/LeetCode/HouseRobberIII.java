@@ -34,7 +34,6 @@ Output: 9
 Explanation: Maximum amount of money the thief can rob = 4 + 5 = 9.
  */
 
-import org.omg.CORBA.MARSHAL;
 
 //自己写的感觉是智障,看了Discuss后才会写
 class HouseRobberIIISolution {
