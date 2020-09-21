@@ -36,6 +36,33 @@ public class KthNode {
         }
     }
 
+    //事实证明不用全局变量不行，飞书一面面试官错了
+    static public class Solution1 {
+
+        TreeNode KthNode(TreeNode pRoot, int k) {
+
+            return find(pRoot, k, 0);
+        }
+
+        private TreeNode find(TreeNode root, int k, Integer count) {
+            if (root == null) {
+                return null;
+            }
+            TreeNode left = find(root.left, k, count);
+            System.out.println("count= " + System.identityHashCode(count));
+            if (++count == k) {
+                System.out.println("++count= " + System.identityHashCode(count));
+                return root;
+            }
+            TreeNode right = find(root.right, k, count);
+            if (left != null) {
+                return left;
+            } else {
+                return right;
+            }
+        }
+    }
+
     static class buildTree {
         public TreeNode buildTreeNode(String s) {
             s = s.substring(1, s.length() - 1);
@@ -69,8 +96,9 @@ public class KthNode {
     public static void main(String[] args) {
         String nodes = "(5,3,7,2,4,6,8)";
         TreeNode root = new buildTree().buildTreeNode(nodes);
-        int k = 3;
+        int k = 1;
         System.out.println(new Solution().KthNode(root, k).val);
+        System.out.println(new Solution1().KthNode(root, k).val);
     }
 
 }
