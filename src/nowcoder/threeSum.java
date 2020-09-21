@@ -13,8 +13,6 @@ package nowcoder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 public class threeSum {
     static public class Solution {
