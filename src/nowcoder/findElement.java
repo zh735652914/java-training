@@ -16,7 +16,7 @@ package nowcoder;
  */
 
 public class findElement {
-    static public class Finder {
+    static public class Finder0 {
         public int[] findElement(int[][] mat, int n, int m, int target) {
             int[] ans = new int[2];
             int x = 0, y = 0;
@@ -34,6 +34,26 @@ public class findElement {
                     }
                 } else if (x + 1 >= n || mat[x + 1][y] > target) {
                     y++;
+                } else {
+                    x++;
+                }
+            }
+            return ans;
+        }
+    }
+
+    static public class Finder {
+        public int[] findElement(int[][] mat, int n, int m, int target) {
+            int x = 0, y = m - 1;
+            int[] ans = new int[2];
+            while (x < n && y >= 0) {
+                if (target == mat[x][y]) {
+                    ans[0] = x;
+                    ans[1] = y;
+                    return ans;
+                }
+                if (mat[x][y] > target) {
+                    y--;
                 } else {
                     x++;
                 }
