@@ -8,6 +8,12 @@ public class BuildTree {
 
     }
 
+    protected TreeNode LevelBuildTree(String s) {
+        s = s.substring(1, s.length() - 1);
+        String[] nodes = s.split(",");
+        return LevelBuildTree(nodes);
+    }
+
     protected TreeNode LevelBuildTree(String[] s) {
         TreeNode[] nodes = new TreeNode[s.length];
         for (int i = 0; i < nodes.length; i++) {
