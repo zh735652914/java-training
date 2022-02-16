@@ -4,6 +4,27 @@ https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
  */
 
 public class LowestCommonAncestorBinaryTree {
+
+    // 这个逻辑更加清晰
+    static class Solution2 {
+        public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+            // LCA 问题
+            if (root == null) {
+                return root;
+            }
+            if (root == p || root == q) {
+                return root;
+            }
+            TreeNode left = lowestCommonAncestor(root.left, p, q);
+            TreeNode right = lowestCommonAncestor(root.right, p, q);
+            if (left != null && right != null) {
+                return root;
+            } else if (left != null) {
+                return left;
+            } else return right;
+        }
+    }
+
     // 这题一定要多看看！
     static class Solution {
         private TreeNode ans;
