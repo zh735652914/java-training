@@ -4,7 +4,26 @@ package Beijing;
 https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/
  */
 public class RemoveDuplicatesfromSortedListII {
+    // 别人的递归好理解一些
     static class Solution {
+        public ListNode deleteDuplicates(ListNode head) {
+            if (head == null || head.next == null) {
+                return head;
+            }
+            ListNode next = head.next;
+            if (head.val == next.val) {
+                while (next != null && next.val == head.val) {
+                    next = next.next;
+                }
+                return deleteDuplicates(next);
+            } else {
+                head.next = deleteDuplicates(next);
+            }
+            return head;
+        }
+    }
+
+    static class Solution0 {
         public ListNode deleteDuplicates(ListNode head) {
             ListNode perAns = new ListNode(-1);
             perAns.next = head;
