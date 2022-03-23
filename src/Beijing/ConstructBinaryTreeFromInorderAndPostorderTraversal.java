@@ -10,6 +10,34 @@ import java.util.Map;
 public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
     static class Solution {
         private Map<Integer, Integer> map;
+        private int index;
+
+        public TreeNode buildTree(int[] inorder, int[] postorder) {
+            map = new HashMap<>();
+            for (int i = 0; i < inorder.length; i++) {
+                map.put(inorder[i], i);
+            }
+            index = postorder.length - 1;
+            return backtrack(inorder, postorder, 0, inorder.length - 1);
+        }
+
+        private TreeNode backtrack(int[] inorder, int[] postorder, int start, int end) {
+            if (start > end) {
+                return null;
+            }
+            int val = postorder[index];
+            TreeNode root = new TreeNode(val);
+            int pos = map.get(val);
+            index--; // index必须为全局变量
+            root.right = backtrack(inorder, postorder, pos + 1, end);// 先右后左顺序不能变
+            root.left = backtrack(inorder, postorder, start, pos - 1);
+            return root;
+        }
+    }
+
+    // 这个是自己写的
+    static class Solution0 {
+        private Map<Integer, Integer> map;
 
         public TreeNode buildTree(int[] inorder, int[] postorder) {
             map = new HashMap<>();
