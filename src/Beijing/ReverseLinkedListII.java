@@ -5,7 +5,7 @@ https://leetcode-cn.com/problems/reverse-linked-list-ii/
 
 public class ReverseLinkedListII {
     // 这个写法自己不熟悉，得多看看，适用范围很广
-    static class Solution {
+    static class Solution1 {
         public ListNode reverseBetween(ListNode head, int left, int right) {
             ListNode dunmmyHead = new ListNode(-1);
             dunmmyHead.next = head;
@@ -72,6 +72,40 @@ public class ReverseLinkedListII {
             ListNode last = reverse(next);
             last.next = head;
             return head;
+        }
+    }
+
+    // 自己又写了一次
+    static class Solution {
+        public ListNode reverseBetween(ListNode head, int left, int right) {
+            ListNode dummyHead = new ListNode(-1), pL = null, R = null;
+            dummyHead.next = head;
+            ListNode p = dummyHead, per = p;
+            int count = 0;
+            while (p != null) {
+                if (count == left - 1) {
+                    pL = p;
+                }
+                if (count == right) {
+                    R = p;
+                }
+                p = p.next;
+                count++;
+            }
+            ListNode next = R.next, L = pL.next;
+            reverse(L, R);
+            pL.next = R;
+            L.next = next;
+            return dummyHead.next;
+        }
+
+        private void reverse(ListNode L, ListNode R) {
+            if (L == R) {
+                return;
+            }
+            reverse(L.next, R);
+            L.next.next = L;
+            L.next = null;
         }
     }
 
