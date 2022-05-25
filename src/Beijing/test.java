@@ -9,12 +9,14 @@ public class test {
         String name = scanner.nextLine();
         String[] words = name.split(" ");
         StringBuilder stringBuilder = new StringBuilder();
-        for (String word : words) {
-            if (word.length() < 1) {
+        for (int i = 1; i < words.length; i++) {
+            if (words[i].length() < 1) {    // 如果为空
                 continue;
             }
-            stringBuilder.append(word);
+            stringBuilder.append(words[i]);
         }
+        stringBuilder.append('_');
+        stringBuilder.append(words[0], 0, words[0].length() - 1);
         char first = stringBuilder.charAt(0);
         first = Character.toLowerCase(first);
         stringBuilder.replace(0, 1, String.valueOf(first));
