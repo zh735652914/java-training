@@ -4,10 +4,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class PrintTree {
-    PrintTree() {
+    public PrintTree() {
     }
 
-    protected void LevelPrintTree(TreeNode root) {
+    public void LevelPrintTree(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
