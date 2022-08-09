@@ -20,6 +20,7 @@ public class test {
         char first = stringBuilder.charAt(0);
         first = Character.toLowerCase(first);
         stringBuilder.replace(0, 1, String.valueOf(first));
+        stringBuilder.append("_topInterviewList");
         System.out.println(stringBuilder);
     }
 }
