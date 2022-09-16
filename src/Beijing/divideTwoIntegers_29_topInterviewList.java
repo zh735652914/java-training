@@ -4,7 +4,35 @@ https://leetcode.cn/problems/divide-two-integers/
  */
 
 public class divideTwoIntegers_29_topInterviewList {
+    // 用负数来做，用来规避使用长整型，自己不会
     static class Solution {
+        public int divide(int dividend, int divisor) {
+            boolean positive = true;
+            if (dividend > 0) {
+                positive = false;
+                dividend = -dividend;
+            }
+            if (divisor > 0) {
+                positive = !positive;
+                divisor = -divisor;
+            }
+            int ans = 0;
+            while (dividend <= divisor) {
+                int n = 1;
+                while (true) {
+                    if ((dividend >> n) >= divisor) {
+                        ans -= 1 << (n - 1);
+                        dividend = dividend - (divisor << (n - 1));
+                        break;
+                    }
+                    n++;
+                }
+            }
+            return positive ? (ans == Integer.MIN_VALUE ? Integer.MAX_VALUE : -ans) : ans;
+        }
+    }
+
+    static class Solution0 {
         // 位运算，自己没想到
         public int divide(int dividend, int divisor) {
             /*
