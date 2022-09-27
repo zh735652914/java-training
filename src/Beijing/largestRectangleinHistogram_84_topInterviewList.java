@@ -3,13 +3,15 @@ package Beijing;
 https://leetcode.cn/problems/largest-rectangle-in-histogram/
  */
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class largestRectangleinHistogram_84_topInterviewList {
     // 这种方法自己不会写，需要多研究研究
     static class Solution {
         public int largestRectangleArea(int[] heights) {
-            Stack<Integer> stack = new Stack<>();
+            // 不理解Deque双端队列为什么要比stack快
+            Deque<Integer> stack = new ArrayDeque<>();
             int ans = 0;
             int[] tmp = new int[heights.length + 2];
             System.arraycopy(heights, 0, tmp, 1, heights.length);
