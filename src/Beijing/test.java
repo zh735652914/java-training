@@ -18,7 +18,7 @@ public class test {
         stringBuilder.append('_');
         stringBuilder.append(words[0], 0, words[0].length() - 1);
         char first = stringBuilder.charAt(0);
-        first = Character.toLowerCase(first);
+        first = Character.toUpperCase(first);
         stringBuilder.replace(0, 1, String.valueOf(first));
         stringBuilder.append("_topInterviewList");
         System.out.println(stringBuilder);
