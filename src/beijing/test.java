@@ -20,7 +20,7 @@ public class test {
         char first = stringBuilder.charAt(0);
         first = Character.toUpperCase(first);
         stringBuilder.replace(0, 1, String.valueOf(first));
-        stringBuilder.append("_topInterviewList");
+        stringBuilder.append("_HotOneHundred");
         System.out.println(stringBuilder);
     }
 }
