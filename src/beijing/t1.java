@@ -9,7 +9,7 @@ public class t1 {
     1，2，4，3，5
      */
 
-    private static int funchtion(int[] nums) {
+    private static int function(int[] nums) {
         if (nums.length <= 1) {
             return 0;
         }
@@ -40,6 +40,6 @@ public class t1 {
     public static void main(String[] args) {
         int[] nums = {1, 2, 4, 3, 5};
 //        int[] nums = {5, 3, 4, 2, 1};
-        System.out.println(funchtion(nums));
+        System.out.println(function(nums));
     }
 }
