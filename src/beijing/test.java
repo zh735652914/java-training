@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class test {
     public static void main(String[] args) {
-        System.out.println("输入题目名");
+        System.out.println("输入题目名:");
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
         String[] words = name.split(" ");
