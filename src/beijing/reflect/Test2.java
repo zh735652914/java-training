@@ -14,7 +14,8 @@ public class Test2 {
 		Class class2 = new Person().getClass();
 		Class class3 = Class.forName("com.qf.d_reflect.Person");
          */
-        Method method = clazz.getMethod("say", String.class, int.class);
-        method.invoke(clazz.newInstance(), "小明", 18);
+        Method method = clazz.getMethod("say", String.class, int.class, String.class);
+        // 如果写了有参的构造方法，没有无参的构造方法会报错
+        method.invoke(clazz.newInstance(), "小明", 18, "男");
     }
 }
