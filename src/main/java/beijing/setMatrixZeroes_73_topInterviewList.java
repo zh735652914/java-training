@@ -1,0 +1,66 @@
+package beijing;
+/*
+https://leetcode.cn/problems/set-matrix-zeroes/
+ */
+
+
+public class setMatrixZeroes_73_topInterviewList {
+    // 自己不会写
+    static class Solution {
+        public void setZeroes(int[][] matrix) {
+            boolean rowFlag0 = false, colFlag0 = false;
+            for (int i = 0; i < matrix.length; i++) {
+                if (matrix[i][0] == 0) {
+                    rowFlag0 = true;
+                    break;
+                }
+            }
+            for (int i = 0; i < matrix[0].length; i++) {
+                if (matrix[0][i] == 0) {
+                    colFlag0 = true;
+                    break;
+                }
+            }
+            for (int i = 1; i < matrix.length; i++) {
+                for (int j = 1; j < matrix[i].length; j++) {
+                    if (matrix[i][j] == 0) {
+                        matrix[0][j] = 0;
+                        matrix[i][0] = 0;
+                    }
+                }
+            }
+            for (int i = 1; i < matrix.length; i++) {
+                for (int j = 1; j < matrix[0].length; j++) {
+                    if (matrix[0][j] == 0 || matrix[i][0] == 0) {
+                        matrix[i][j] = 0;
+                    }
+                }
+            }
+            if (rowFlag0) {
+                for (int i = 0; i < matrix.length; i++) {
+                    matrix[i][0] = 0;
+                }
+            }
+            if (colFlag0) {
+                for (int i = 0; i < matrix[0].length; i++) {
+                    matrix[0][i] = 0;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[][] matrix = {
+                {0, 1, 2, 0},
+                {3, 4, 5, 2},
+                {1, 3, 1, 5}
+        };
+        new Solution().setZeroes(matrix);
+        for (int[] row : matrix) {
+            for (int col : row) {
+                System.out.print(col + ", ");
+            }
+            System.out.println();
+        }
+    }
+}
