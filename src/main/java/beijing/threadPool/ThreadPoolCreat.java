@@ -1,5 +1,6 @@
 package beijing.threadPool;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -166,9 +167,14 @@ public class ThreadPoolCreat {
     @Test
     public void testThreadPoolExecutor() throws InterruptedException {
 
+        // 使用Google开源框架 guava 提供的 ThreadFactoryBuilder 快速给线程池里的线程设置有意义的名字。
+        ThreadFactory threadFactory = new ThreadFactoryBuilder()
+                .setNameFormat("自定义的子线程" + "-%d")
+                .setDaemon(true).build();
+
         // 创建线程池
         ThreadPoolExecutor threadPool = new ThreadPoolExecutor(5, 10, 100,
-                TimeUnit.SECONDS, new LinkedBlockingQueue<>(10));
+                TimeUnit.SECONDS, new LinkedBlockingQueue<>(10), threadFactory);
 
         log.info("线程池的核心线程数：" + threadPool.getPoolSize());
 
@@ -176,7 +182,7 @@ public class ThreadPoolCreat {
         for (int i = 0; i < 10; i++) {
             final int index = i;
             threadPool.execute(() -> {
-                log.info(index + " 被执行,线程名:" + Thread.currentThread().getName());
+                log.info(index + " 被执行 , 线程名:" + Thread.currentThread().getName());
                 try {
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
