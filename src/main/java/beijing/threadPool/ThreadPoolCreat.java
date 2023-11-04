@@ -1,5 +1,6 @@
 package beijing.threadPool;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.util.concurrent.*;
@@ -15,9 +16,11 @@ import java.util.concurrent.*;
  * https://developer.huawei.com/consumer/cn/forum/topic/0202438478344770295
  */
 
+@Slf4j
 public class ThreadPoolCreat {
 
     /**
+     *
      * 线程池四种创建方式
      * Java通过Executors（jdk1.5并发包）提供四种线程池，分别为：
      *  newCachedThreadPool创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。
@@ -25,9 +28,15 @@ public class ThreadPoolCreat {
      *  newScheduledThreadPool 创建一个定长线程池，支持定时及周期性任务执行。
      *  newSingleThreadExecutor 创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。
      *
-     *  ThreadPoolExecutor,推荐用这个创建线程池
-     *  https://developer.huawei.com/consumer/cn/forum/topic/0202438478344770295
-     */
+     * ThreadPoolExecutor,推荐用这个创建线程池
+     * https://developer.huawei.com/consumer/cn/forum/topic/0202438478344770295
+     *
+     * 不建议使用Executors的最重要的原因是：Executors提供的很多方法默认使用的都是无界的LinkedBlockingQueue，高负载情境下，
+     * 无界队列很容易导致OOM，而OOM会导致所有请求都无法处理，这是致命问题。所以强烈建议使用有界队列。
+     * 注：LinkedBlockingQueue是有界队列，但是不设置大小的话，就默认为Integer.MAX_VALUE，相当于无界队列了。
+     *
+     **/
+
 
     /**
      * newCachedThreadPool
@@ -161,25 +170,26 @@ public class ThreadPoolCreat {
         ThreadPoolExecutor threadPool = new ThreadPoolExecutor(5, 10, 100,
                 TimeUnit.SECONDS, new LinkedBlockingQueue<>(10));
 
-        System.out.println("线程池的核心线程数：" + threadPool.getPoolSize());
+        log.info("线程池的核心线程数：" + threadPool.getPoolSize());
 
         // 执行任务
         for (int i = 0; i < 10; i++) {
             final int index = i;
             threadPool.execute(() -> {
-                System.out.println(index + " 被执行,线程名:" + Thread.currentThread().getName());
+                log.info(index + " 被执行,线程名:" + Thread.currentThread().getName());
                 try {
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             });
+            log.info("i= " + i + " quee " + threadPool.getQueue().size());
         }
 
-        System.out.println("主线程开始休眠");
+        log.info("主线程开始休眠");
         Thread.sleep(10000);
-        System.out.println("线程池的核心线程数：" + threadPool.getPoolSize());
-        System.out.println("主线程执行完");
+        log.info("线程池的核心线程数：" + threadPool.getPoolSize());
+        log.info("主线程执行完");
     }
 
 }
