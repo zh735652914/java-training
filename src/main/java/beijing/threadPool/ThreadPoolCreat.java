@@ -161,6 +161,8 @@ public class ThreadPoolCreat {
         ThreadPoolExecutor threadPool = new ThreadPoolExecutor(5, 10, 100,
                 TimeUnit.SECONDS, new LinkedBlockingQueue<>(10));
 
+        System.out.println("线程池的核心线程数：" + threadPool.getPoolSize());
+
         // 执行任务
         for (int i = 0; i < 10; i++) {
             final int index = i;
@@ -176,6 +178,7 @@ public class ThreadPoolCreat {
 
         System.out.println("主线程开始休眠");
         Thread.sleep(10000);
+        System.out.println("线程池的核心线程数：" + threadPool.getPoolSize());
         System.out.println("主线程执行完");
     }
 
