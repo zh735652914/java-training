@@ -1,0 +1,1 @@
+[使用策略模式+简单工厂替换if else](https://blog.csdn.net/baichoufei90/article/details/105770736#:~:text=%E6%AF%8F%E4%B8%AA%E6%96%B0%E4%B8%9A%E5%8A%A1%E9%9C%80%E8%A6%81,%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84if-else%E3%80%82)
