@@ -1,7 +1,7 @@
 package next;
 
-import next.utils.BuildTree;
 import next.utils.TreeNode;
+import next.utils.TreeUtils;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
@@ -23,7 +23,7 @@ public class LeetCode104 {
     @Test
     public void test() {
         String nodes = "[3,9,20,null,null,15,7]";
-        BuildTree buildTree = new BuildTree();
-        assertEquals(3, maxDepth(buildTree.LevelBuildTree(nodes)));
+        TreeUtils treeUtils = new TreeUtils();
+        assertEquals(3, maxDepth(TreeUtils.LevelBuildTree(nodes)));
     }
 }

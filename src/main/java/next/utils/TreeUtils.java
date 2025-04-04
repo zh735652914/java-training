@@ -1,20 +1,19 @@
 package next.utils;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
-public class BuildTree {
-    public BuildTree() {
+public class TreeUtils {
+    public TreeUtils() {
 
     }
 
-    public TreeNode LevelBuildTree(String s) {
+    public static TreeNode LevelBuildTree(String s) {
         s = s.substring(1, s.length() - 1);
         String[] nodes = s.split(",");
         return LevelBuildTree(nodes);
     }
 
-    public TreeNode LevelBuildTree(String[] s) {
+    public static TreeNode LevelBuildTree(String[] s) {
         TreeNode[] nodes = new TreeNode[s.length];
         for (int i = 0; i < nodes.length; i++) {
             if (s[i].equals("null") || s[i].equals("NULL")) {
@@ -28,7 +27,7 @@ public class BuildTree {
         return nodes[0];
     }
 
-    private void LevelBacktrack(TreeNode[] nodes, Queue<Integer> Q, int index) {
+    private static void LevelBacktrack(TreeNode[] nodes, Queue<Integer> Q, int index) {
         int n = Q.size();
         if (n == 0 || index >= nodes.length) {
             return;
@@ -54,5 +53,31 @@ public class BuildTree {
             n--;
         }
         LevelBacktrack(nodes, Q, index);
+    }
+
+    public static void printTree(TreeNode root) {
+        if (root == null) {
+            System.out.println("null");
+            return;
+        }
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        queue.offer(root);
+        List<List<String>> nodes = new ArrayList<>();
+        while (!queue.isEmpty()) {
+            List<String> level = new ArrayList<>();
+            int size = queue.size();
+            while (size-- > 0) {
+                TreeNode curNode = queue.poll();
+                level.add(String.valueOf(curNode.val));
+                if (curNode.left != null) {
+                    queue.offer(curNode.left);
+                }
+                if (curNode.right != null) {
+                    queue.offer(curNode.right);
+                }
+            }
+            nodes.add(level);
+        }
+        System.out.println(nodes);
     }
 }

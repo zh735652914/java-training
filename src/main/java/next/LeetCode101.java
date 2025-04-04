@@ -1,7 +1,7 @@
 package next;
 
-import next.utils.BuildTree;
 import next.utils.TreeNode;
+import next.utils.TreeUtils;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -35,14 +35,14 @@ public class LeetCode101 {
     @Test
     public void test() {
         String node = "[1,2,2,3,4,4,3]";
-        BuildTree buildTree = new BuildTree();
-        assertTrue(isSymmetric(buildTree.LevelBuildTree(node)));
+        TreeUtils treeUtils = new TreeUtils();
+        assertTrue(isSymmetric(TreeUtils.LevelBuildTree(node)));
     }
 
     @Test
     public void test2() {
         String node = "[1,2,2,null,3,null,3]";
-        BuildTree buildTree = new BuildTree();
-        assertFalse(isSymmetric(buildTree.LevelBuildTree(node)));
+        TreeUtils treeUtils = new TreeUtils();
+        assertFalse(isSymmetric(TreeUtils.LevelBuildTree(node)));
     }
 }

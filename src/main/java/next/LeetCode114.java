@@ -1,7 +1,7 @@
 package next;
 
-import next.utils.BuildTree;
 import next.utils.TreeNode;
+import next.utils.TreeUtils;
 import org.junit.Test;
 
 /**
@@ -28,8 +28,8 @@ public class LeetCode114 {
     @Test
     public void test() {
         String nodes = "[1,2,5,3,4,null,6]";
-        BuildTree buildTree = new BuildTree();
-        TreeNode root = buildTree.LevelBuildTree(nodes);
+        TreeUtils treeUtils = new TreeUtils();
+        TreeNode root = TreeUtils.LevelBuildTree(nodes);
         flatten(root);
         while (root.right != null) {
             System.out.print(root.val + "->");
